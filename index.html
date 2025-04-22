@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday 호경씨</title>
+  <style>
+    body {
+      margin: 0;
+      background: #eaf4ff;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+    header {
+      background-color: #6fa8dc;
+      color: white;
+      padding: 1em 0;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .letter {
+      max-width: 700px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin-bottom: 2em;
+    }
+    .gallery img {
+      width: 90%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    audio {
+      display: none;
+    }
+    .falling {
+      position: fixed;
+      top: -5%;
+      font-size: 1.5em;
+      color: rgba(255,105,180,0.4);
+      animation: fall 10s linear infinite;
+      z-index: 999;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(120vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="bgm.mp3" type="audio/mp3">
+  </audio>
+  <header>Happy Birthday 호경씨</header>
+  <div class="letter">
+    <p><strong>호경씨, 생일 축하해요</strong></p>
+    <p>존재 그 자체로 가보네의 균형을 잡아주는 당신, 그대의 탄생일을 축하하지 않을 수 없습니다.</p>
+    <p>가민이의 진로를 함께 고민하고, 보민이의 마음을 함께 헤아리는 당신은 한 가정의 중심이자 학생들의 삶을 밝혀주는 교사로서도 빛나는 커리어를 쌓아가고 있어요.</p>
+    <p>그대가 있어 매일이 기적 같고, 오늘의 일상이 어제보다 단단해집니다.</p>
+    <p>당신의 생일, 그저 축하만 하기엔 부족해서 이 마음을 편지로 남깁니다.</p>
+    <p><em>“어제와 같은 오늘, 오늘과 같은 내일, 지금처럼만 곁에 있어주세요.”</em></p>
+    <p>당신의 마지막 사랑이 될 수 있어서, 나는 참 행복한 사람입니다. 사랑하고 또 사랑할게요.</p>
+    <p><strong>2025년 5월24일 당신을 존경하고 사랑하는, 강석우</strong></p>
+  </div>
+  <div class="gallery">
+    <img src="photo1.jpg" />
+    <img src="photo2.jpg" />
+    <img src="photo3.jpg" />
+    <img src="photo4.jpg" />
+    <img src="photo5.jpg" />
+  </div>
+  <script>
+    const elements = ['제', '호', '경', '💗','💓','💖','💕'];
+    for (let i = 0; i < 40; i++) {
+      let span = document.createElement('span');
+      span.className = 'falling';
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDuration = (Math.random() * 10 + 10) + 's';
+      span.textContent = elements[Math.floor(Math.random() * elements.length)];
+      document.body.appendChild(span);
+    }
+  </script>
+</body>
+</html>
